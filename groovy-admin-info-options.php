@@ -5,18 +5,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_action( 'admin_menu', array('Groovy_Admin_Info_Page_Options', 'gai_add_admin_menu') );
 add_action( 'admin_init', array('Groovy_Admin_Info_Page_Options', 'gai_settings_init')  );
+add_action( 'plugins_loaded', array('Groovy_Admin_Info_Page_Options', 'gai_load_plugin_textdomain') );
 
 class Groovy_Admin_Info_Page_Options {
-	const GAI_PAGETITLE = 'Настройки плагина Groovy Admin Info';
 	const GAI_MENUTITLE = 'Grv Admin Info Page';
 	const GAI_SLUG = 'gai_options';
+
+	public function gai_load_plugin_textdomain() {
+	    load_plugin_textdomain( 'groovy-admin-info', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+	}
 
 	/**
 	 * Creates admin menu single item
 	 * @return void
 	 */
 	public function gai_add_admin_menu() { 
-		add_options_page( self::GAI_PAGETITLE, self::GAI_MENUTITLE, 'manage_options', self::GAI_SLUG, array(__CLASS__, 'gai_options_page') );		
+		add_options_page( __('Настройки плагина Groovy Admin Info', 'groovy-admin-info'), self::GAI_MENUTITLE, 'manage_options', self::GAI_SLUG, array(__CLASS__, 'gai_options_page') );		
 	}
 
 	/**
@@ -28,34 +32,34 @@ class Groovy_Admin_Info_Page_Options {
 				
 		add_settings_field( 
 			'gai_checkbox_menu_enable', 
-			__( 'Элемент в меню админ-панели', 'wordpress' ), 
+			__( 'Элемент в меню админ-панели', 'groovy-admin-info' ), 
 			array(__CLASS__, 'gai_checkbox_menu_enable_render'), 
 			'pluginPage',
 			'gai_pluginPage_section' 
 		);						
 		add_settings_field( 
 			'gai_checkbox_dashboard_enable', 
-			__( 'Виджет в консоли', 'wordpress' ), 
+			__( 'Виджет в консоли', 'groovy-admin-info' ), 
 			array(__CLASS__, 'gai_checkbox_dashboard_enable_render'), 
 			'pluginPage',
 			'gai_pluginPage_section' 
 		);	
 		add_settings_section(
 			'gai_pluginPage_section', 
-			__( 'Опции Groovy Admin Info Page', 'wordpress' ), 
+			__( 'Опции Groovy Admin Info Page', 'groovy-admin-info' ), 
 			array(__CLASS__, 'gai_settings_section_callback'), 
 			'pluginPage'
 		);
 		add_settings_field( 
 			'gai_select_material', 
-			__( 'Выберите материал', 'wordpress' ), 
+			__( 'Выберите материал', 'groovy-admin-info'), 
 			array(__CLASS__, 'gai_select_field_material_render'), 
 			'pluginPage',
 			'gai_pluginPage_section' 
 		);
 		add_settings_field( 
 			'gai_checkbox_lock_post', 
-			__( 'Сделать неудаляемым', 'wordpress' ), 
+			__( 'Сделать неудаляемым', 'groovy-admin-info' ), 
 			array(__CLASS__, 'gai_checkbox_lock_render'), 
 			'pluginPage',
 			'gai_pluginPage_section' 
@@ -63,7 +67,7 @@ class Groovy_Admin_Info_Page_Options {
 
 		add_settings_field( 
 			'gai_text_menu_name', 
-			__( 'Название пункта меню', 'wordpress' ), 
+			__( 'Название пункта меню', 'groovy-admin-info' ), 
 			array(__CLASS__, 'gai_text_menu_name_render'), 
 			'pluginPage', 
 			'gai_pluginPage_section' 
@@ -172,7 +176,7 @@ class Groovy_Admin_Info_Page_Options {
 	 * @return void
 	 */
 	public function gai_settings_section_callback() { 
-		echo __( 'Выберите материал для использования в качестве "Информации" и отметьте стоит ли его блокировать', 'wordpress' );
+		echo __( 'Выберите материал для использования в качестве "Информации" и отметьте стоит ли его блокировать', 'groovy-admin-info' );
 	}
 
 	/**

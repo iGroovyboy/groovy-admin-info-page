@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Version:     2018.06.06
  * Author:      Anton Babintsev
  * Author URI:  groovyboy.ru
+ * Text Domain: groovy-admin-info
+ * Domain Path: /languages
  * License:     MIT
  * License URI: https://opensource.org/licenses/MIT
  */
@@ -138,7 +140,7 @@ class Groovy_Admin_Info_Page
 	 * @return array
 	 */
 	public function gai_plugin_add_settings_link( $links ) {
-	    $settings_link = '<a href="options-general.php?page=gai_options">' . __( 'Настройки' ) . '</a>';
+	    $settings_link = '<a href="options-general.php?page=gai_options">' . __( 'Настройки', 'groovy-admin-info' ) . '</a>';
 	    array_push( $links, $settings_link );
 	  	return $links;
 	}
@@ -193,22 +195,14 @@ class Groovy_Admin_Info_Page
 	 * @return void
 	 */
 	public function gai_render_post_content() {
-		//if ( is_array(get_option( 'gai_settings' )) ) {
-		//	$info_post_id = empty(get_option( 'gai_settings' )['gai_select_material']) ? 0 : (int) get_option( 'gai_settings' )['gai_select_material'];
-		//	$post = get_post( $info_post_id ); 
-		//} else {
-		//	$info_post_id = 0;
-		//	$post = "";
-		//}
-
 		$post = "";
 		$info_post_id = self::gai_get_option('gai_select_material', 0);
 		$post = get_post( $info_post_id ); 
 				
 		if ( empty($post) ) {
 			echo '<div class="groovy-admin-info-wrap">';
-			echo '<p>' . __('Пожалуйста, выберите материал для отображения на странице настроек.') . '</p>';
-			echo '<a href="options-general.php?page=gai_options">' . __('Перейти к настройкам.') . '</a>';
+			echo '<p>' . __('Пожалуйста, выберите материал для отображения на странице настроек.', 'groovy-admin-info') . '</p>';
+			echo '<a href="options-general.php?page=gai_options">' . __('Перейти к настройкам.', 'groovy-admin-info') . '</a>';
 			echo '</div>';
 		} else {
 			echo '<div class="groovy-admin-info-wrap">';

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grooy Admin Info Page v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2018-06-06 23:05+0300\n"
+"POT-Creation-Date: 2018-06-07 15:56+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Anton Babintsev <babintsev.anton@gmail.com>\n"
@@ -22,46 +22,50 @@ msgstr ""
 "X-Generator: Poedit 2.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: groovy-admin-info-options.php:10
+msgid "Настройки плагина Groovy Admin Info"
+msgstr "Groovy Admin Info Settings page"
+
 #: groovy-admin-info-options.php:31
 msgid "Элемент в меню админ-панели"
 msgstr "Admin menu item"
 
-#: groovy-admin-info-options.php:39
+#: groovy-admin-info-options.php:38
 msgid "Виджет в консоли"
 msgstr "Dashboard widget"
 
-#: groovy-admin-info-options.php:48
+#: groovy-admin-info-options.php:45
 msgid "Опции Groovy Admin Info Page"
 msgstr "Options for Groovy Admin Info Page"
 
-#: groovy-admin-info-options.php:54
+#: groovy-admin-info-options.php:51
 msgid "Выберите материал"
 msgstr "Pick a post/page"
 
-#: groovy-admin-info-options.php:61
+#: groovy-admin-info-options.php:58
 msgid "Сделать неудаляемым"
 msgstr "Make the post/page undeleatable"
 
-#: groovy-admin-info-options.php:69
+#: groovy-admin-info-options.php:66
 msgid "Название пункта меню"
 msgstr "Admin menu item name"
 
-#: groovy-admin-info-options.php:178
+#: groovy-admin-info-options.php:175
 msgid ""
 "Выберите материал для использования в качестве \"Информации\" и отметьте "
 "стоит ли его блокировать"
 msgstr ""
 "Pick a post/page that will be used as a contentsource in your Info page"
 
-#: groovy-admin-info.php:148
+#: groovy-admin-info.php:143
 msgid "Настройки"
 msgstr "Settings"
 
-#: groovy-admin-info.php:217
+#: groovy-admin-info.php:204
 msgid "Пожалуйста, выберите материал для отображения на странице настроек."
 msgstr "Please, select a post/page at the plugin's Settings page."
 
-#: groovy-admin-info.php:218
+#: groovy-admin-info.php:205
 msgid "Перейти к настройкам."
 msgstr "Visit Settings page."
 
